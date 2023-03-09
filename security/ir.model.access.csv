@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_restaurant_dapur,access.restaurant.dapur,model_restaurant_dapur,,1,1,1,1
+access_restaurant_makanan,access.restaurant.makanan,model_restaurant_makanan,,1,1,1,1
+access_restaurant_pesan,access.restaurant.pesan,model_restaurant_pesan,,1,1,1,1
+access_restaurant_pesandetail,access.restaurant.pesandetail,model_restaurant_pesandetail,,1,1,1,1
+access_restaurant_pegawai,access.restaurant.pegawai,model_restaurant_pegawai,,1,1,1,1
+access_restaurant_pelanggan,access.restaurant.pelanggan,model_restaurant_pelanggan,,1,1,1,1

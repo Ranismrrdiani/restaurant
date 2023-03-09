@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- restaurant.pesan tree view -->
+    <record id="restaurant_pesan_view_tree" model="ir.ui.view">
+        <field name="name">Pesanan</field>
+        <field name="model">restaurant.pesan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="pegawai_id"/>
+                <field name="pelanggan_id"/>
+                <field name="tanggal"/>
+                <field name="no_meja"/>
+                <field name="metode"/>
+                <field name="pesandetail_ids"/>
+                <field name="total_harga"/>
+                <field name="sudah_bayar"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- restaurant.pesan form view -->
+    <record id="restaurant_pesan_view_form" model="ir.ui.view">
+        <field name="name">Pesanan</field>
+        <field name="model">restaurant.pesan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="pegawai_id"/>
+                        <field name="pelanggan_id"/>
+                    </group>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="tanggal"/>
+                        <field name="no_meja"/>
+                        <field name="metode"/>
+                        <field name="total_harga" sum="Total Harga"/>
+                        <field name="sudah_bayar"/>
+                    </group>
+                     <group name="name" string="DAFTAR PESANAN">  
+                        <field name="pesandetail_ids">
+                            <tree editable='bottom'>
+                                <field name="makanan_id"/> 
+                                <field name="harga_satuan"/> 
+                                <field name="qty"/> 
+                                <field name="harga" sum="Total"/>                                        
+                            </tree>
+                        </field>      
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- restaurant.pesan action window -->
+    <record id="restaurant_pesan_action" model="ir.actions.act_window">
+        <field name="name">Pesanan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">restaurant.pesan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="restaurant_pesan_menu_act" 
+              name="PESAN" 
+              parent="restaurant_pesan_menu_categ" 
+              action="restaurant_pesan_action" 
+              sequence="20"/>
+
+</odoo>

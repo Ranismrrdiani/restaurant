@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--restaurant.dapur tree view -->
+<record id="restaurant_dapur_view_tree" model="ir.ui.view">
+    <field name="name">Dapur</field>
+    <field name="model">restaurant.dapur</field>
+    <field name="arch" type="xml">
+        <tree>
+            <!-- Add your fields here -->
+                <field name="alat_dapur"/>
+                <field name="img" widget="image"/>
+                <field name="bahan_makanan"/>
+                <field name="makanan_ids"/>
+        </tree>
+    </field>
+</record>
+
+    <!-- restaurant.dapur form view -->
+    <record id="restaurant_dapur_view_form" model="ir.ui.view">
+        <field name="name">Dapur</field>
+        <field name="model">restaurant.dapur</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="name" string="KITCHEN">
+                        <!-- Add your fields here -->
+                        <field name="alat_dapur"/>
+                    </group>
+                    <notebook>
+                        <page string="Image">
+                            <field name="img" widget="image"/>
+                        </page>
+                    </notebook>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="bahan_makanan"/>
+                        <field name="makanan_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- restaurant.dapur action window -->
+    <record id="restaurant_dapur_action" model="ir.actions.act_window">
+        <field name="name">Dapur</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">restaurant.dapur</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="restaurant_dapur_menu_act" 
+              name="DAPUR" 
+              parent="restaurant_dapur_menu_categ" 
+              action="restaurant_dapur_action" 
+              sequence="10"/>
+
+</odoo>

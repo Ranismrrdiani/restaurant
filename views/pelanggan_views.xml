@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- restaurant.pelanggan tree view -->
+    <record id="restaurant_pelanggan_view_tree" model="ir.ui.view">
+        <field name="name">Pelanggan</field>
+        <field name="model">restaurant.pelanggan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="membership"/>
+                <field name="id_pelanggan"/>
+                <field name="no_hp"/>
+                <field name="alamat"/>
+                <field name="gender"/>
+                <field name="level"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- restaurant.pelanggan form view -->
+    <record id="restaurant_pelanggan_view_form" model="ir.ui.view">
+        <field name="name">Pelanggan</field>
+        <field name="model">restaurant.pelanggan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="name" string="DAFTAR PELANGGAN">
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="membership"/>
+                        <field name="id_pelanggan"/>
+                    </group>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="alamat"/>
+                        <field name="no_hp"/>
+                        <field name="gender"/>
+                        <field name="level"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- restaurant.pelanggan action window -->
+    <record id="restaurant_pelanggan_action" model="ir.actions.act_window">
+        <field name="name">Pelanggan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">restaurant.pelanggan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="restaurant_pelanggan_menu_act" 
+              name="PELANGGAN" 
+              parent="restaurant_pelanggan_menu_categ" 
+              action="restaurant_pelanggan_action" 
+              sequence="20"/>
+
+</odoo>
