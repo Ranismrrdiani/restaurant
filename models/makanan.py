@@ -21,7 +21,7 @@ class Makanan (models.Model):
     pesanan_id = fields.Many2one(comodel_name='restaurant.pesan', string='Pesanan')
     
     dapur_id = fields.Many2one(comodel_name='restaurant.dapur', string='Alat Dapur')
-    pelanggan_id = fields. Many2one(comodel_name='restaurant.pelanggan', string='Pelanggannya')
+    pelanggan_id = fields. Many2one(comodel_name='restaurant.pelanggan', string='Pelanggan')
     
     
     

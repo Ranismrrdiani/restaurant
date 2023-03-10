@@ -35,8 +35,20 @@
                     <group>
                         <!-- Add your fields here -->
                         <field name="bahan_makanan"/>
-                        <field name="makanan_ids"/>
                     </group>
+                    <notebook>
+                            <page name="makanannya" string="MAKANANNYA">
+                                <field name="makanan_ids" widget="section_and_note_one2many" mode="tree,kanban">
+                                    <tree editable="buttom">
+                                        <field name="name"/>
+                                        <field name="jenis" />
+                                        <field name="harga" widget="monetary"/>
+                                        <field name="img" widget="image" />
+                                        <field name="stok"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                 </sheet>
             </form>
         </field>
